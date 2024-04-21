@@ -11,7 +11,6 @@ public class GreetingController {
 
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
-    @SendToUser
     public Greeting greeting(Member member) throws Exception {
         return new Greeting("Hello, " + HtmlUtils.htmlEscape(member.getName() + " !"));
     }
